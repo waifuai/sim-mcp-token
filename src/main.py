@@ -1,9 +1,9 @@
 import logging
 from typing import Dict, Any, List
 
-from mcp.src.experimentation import experiment_results
-from mcp.src.simulation import run_simulation
-from mcp.src.config import *
+from experimentation import experiment_results
+from simulation import run_simulation
+from config import *
 
 # --- Logging Configuration ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
