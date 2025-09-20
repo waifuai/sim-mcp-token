@@ -1,3 +1,11 @@
+"""
+Unit tests for the constants module.
+
+This module contains tests to verify that all simulation constants are properly
+defined with the correct data types. It ensures that configuration parameters
+maintain their expected types and are accessible for the simulation to function
+correctly.
+"""
 import unittest
 from constants import NUM_AGENTS, NUM_RESOURCES, SIMULATION_STEPS, INITIAL_CTX_BALANCE, RESOURCE_CAPACITY, BASE_RESOURCE_COST, PRICE_ELASTICITY, DEALLOCATION_RATE, AGENT_INCOME, RESOURCE_REGEN_RATE, MAX_RESOURCE_CAPACITY, AGENT_EXPENSE_RATE, MIN_AGENT_BALANCE, BANKRUPTCY_THRESHOLD, DYNAMIC_INCOME_MULTIPLIER, DYNAMIC_REGEN_MULTIPLIER, AGENT_INCOME_CEILING, TAX_RATE, RESOURCE_CAPACITY_MULTIPLIER, INITIAL_IMBALANCE, IMBALANCE_STRENGTH
 

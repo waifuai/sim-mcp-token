@@ -1,3 +1,22 @@
+"""
+Core simulation engine for the agent-based economic system.
+
+This module implements the main simulation loop and step-by-step execution
+logic for the economic simulation. It orchestrates the interactions between
+agents and resources, implements economic policies, and tracks system
+evolution over time.
+
+The simulation engine handles:
+- Agent actions (resource requests, consumption, payments)
+- Resource dynamics (pricing, allocation, regeneration)
+- Economic policies (taxation, wealth redistribution)
+- Agent maintenance (income, expenses, needs adjustment)
+- Bankruptcy detection and agent lifecycle management
+- Comprehensive metrics tracking and reporting
+
+The module provides both step-by-step simulation control and complete
+simulation runs with configurable parameters for experimentation.
+"""
 import numpy as np
 from typing import List, Dict, Any, Tuple
 

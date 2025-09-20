@@ -1,3 +1,20 @@
+"""
+Unit tests for the helpers module.
+
+This module contains comprehensive tests for all utility functions in the
+helpers module, including resource management, agent lifecycle operations,
+economic calculations, and statistical functions. Each test verifies that
+the helper functions perform their intended operations correctly and
+handle edge cases appropriately.
+
+Tests cover:
+- Resource price and availability management
+- Agent request processing and resource allocation
+- Economic policy implementation (taxation, redistribution)
+- Agent maintenance and bankruptcy detection
+- Statistical calculations (Gini coefficient, economic output)
+- Resource dynamics and capacity adjustment
+"""
 import unittest
 import numpy as np
 from typing import List, Any

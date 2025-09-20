@@ -1,3 +1,20 @@
+"""
+Utility functions for the agent-based economic simulation.
+
+This module contains helper functions that support the core simulation logic,
+providing essential operations for resource management, agent lifecycle management,
+economic calculations, and system monitoring. These functions handle the
+day-to-day operations of the simulation including resource allocation,
+economic policy implementation, and statistical calculations.
+
+Key functionality includes:
+- Resource price updates and availability tracking
+- Agent request processing and resource allocation
+- Economic policy implementation (taxation, redistribution)
+- Agent lifecycle management (bankruptcies, needs adjustment)
+- Statistical calculations (Gini coefficient, economic output)
+- Resource dynamics (regeneration, capacity adjustment)
+"""
 import numpy as np
 import random
 from .constants import DEALLOCATION_RATE, TAX_RATE

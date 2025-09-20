@@ -1,3 +1,18 @@
+"""
+Parameter experimentation framework for the agent-based economic simulation.
+
+This module provides tools for systematic parameter exploration and analysis
+of the economic simulation. It runs simulations across ranges of key parameters
+(price elasticity, resource regeneration rates, tax rates, and agent expense rates)
+to identify optimal economic policies and understand system behavior under
+different conditions.
+
+The module includes:
+- Parameter range definitions for systematic testing
+- Experiment execution across parameter spaces
+- Result analysis and optimization identification
+- Logging of key findings and policy recommendations
+"""
 import logging
 import numpy as np
 from simulation import run_simulation

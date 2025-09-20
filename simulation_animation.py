@@ -1,3 +1,21 @@
+"""
+Manim-based visualization for the agent-based economic simulation.
+
+This module creates animated visualizations of the economic simulation using
+the Manim mathematical animation engine. It provides visual representations
+of agent behaviors, wealth distributions, and economic dynamics over time.
+
+The animation includes:
+- Visual representation of agents with wealth-based coloring
+- Real-time wealth updates and position changes
+- Agent type categorization and legend
+- Step-by-step simulation progression
+- Final statistics display
+- Economic metrics visualization
+
+This module requires Manim to be installed and is designed to be run
+with the Manim command-line interface rather than as a standalone script.
+"""
 from manim import *
 import numpy as np
 from src.constants import *

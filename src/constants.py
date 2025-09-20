@@ -1,3 +1,11 @@
+"""
+Configuration constants for the agent-based economic simulation.
+
+This module defines all the default parameters used throughout the simulation,
+including agent population settings, resource configurations, economic policies,
+and simulation control parameters. These constants can be overridden during
+parameter experimentation to test different economic scenarios.
+"""
 NUM_AGENTS: int = 50
 NUM_RESOURCES: int = 3
 SIMULATION_STEPS: int = 100 #100000

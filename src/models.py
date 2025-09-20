@@ -1,3 +1,24 @@
+"""
+Core model classes for the agent-based economic simulation.
+
+This module defines the fundamental entities that drive the simulation:
+Agent and Resource classes. These classes encapsulate the behaviors,
+state, and decision-making logic of economic agents and the resources
+they interact with.
+
+The Agent class represents autonomous economic entities with:
+- Personal wealth (ctx_balance)
+- Resource demand preferences
+- Income and expense dynamics
+- Bankruptcy detection and handling
+- Adaptive behavior through need adjustment
+
+The Resource class represents economic resources with:
+- Dynamic pricing based on supply/demand
+- Capacity constraints and utilization tracking
+- Regeneration capabilities
+- Capacity adaptation to economic conditions
+"""
 import numpy as np
 import random
 import logging

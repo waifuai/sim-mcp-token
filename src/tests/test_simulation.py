@@ -1,3 +1,19 @@
+"""
+Unit tests for the simulation module.
+
+This module contains tests for the core simulation engine functionality,
+including both step-by-step simulation execution and complete simulation
+runs. Tests verify that the simulation produces expected outputs, tracks
+appropriate metrics, and handles parameter overrides correctly.
+
+Tests cover:
+- Individual simulation step execution and metrics
+- Complete simulation run functionality
+- Parameter override and configuration handling
+- Results structure and data integrity
+- Economic metrics calculation and reporting
+- Simulation state management and evolution
+"""
 import unittest
 from typing import Dict, Any
 from simulation import run_simulation, simulation_step

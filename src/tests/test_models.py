@@ -1,3 +1,21 @@
+"""
+Unit tests for the models module.
+
+This module contains comprehensive tests for the core Agent and Resource
+classes that form the foundation of the economic simulation. Tests verify
+that both classes initialize correctly, handle state changes appropriately,
+and perform their core functions as expected.
+
+Tests cover:
+- Agent initialization and state management
+- Agent economic behaviors (income, expenses, taxation)
+- Agent resource requests and demand preferences
+- Agent bankruptcy detection and handling
+- Resource initialization and state management
+- Resource pricing and allocation mechanisms
+- Resource capacity management and regeneration
+- Resource economic dynamics and adjustment
+"""
 import unittest
 import numpy as np
 from models import Agent, Resource
