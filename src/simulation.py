@@ -1,9 +1,9 @@
 import numpy as np
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 
-from config import NUM_RESOURCES, TAX_RATE, NUM_AGENTS
-from helpers import update_resource_prices, get_resource_prices, get_resource_availability, get_agent_requests, allocate_resources, deallocate_resources, regenerate_resources, adjust_agent_needs, adjust_agent_demand_multiplier, add_agent_income, add_agent_expense, check_agent_bankruptcies, tax_agents, redistribute_wealth, adjust_resource_capacity, get_agent_balances, get_total_economic_output, calculate_gini_coefficient, get_resource_load_and_prices
-from models import Agent, Resource
+from .constants import NUM_RESOURCES, TAX_RATE, NUM_AGENTS
+from .helpers import update_resource_prices, get_resource_prices, get_resource_availability, get_agent_requests, allocate_resources, deallocate_resources, regenerate_resources, adjust_agent_needs, adjust_agent_demand_multiplier, add_agent_income, add_agent_expense, check_agent_bankruptcies, tax_agents, redistribute_wealth, adjust_resource_capacity, get_agent_balances, get_total_economic_output, calculate_gini_coefficient, get_resource_load_and_prices
+from .models import Agent, Resource
 
 def _apply_agent_actions(agents: List[Agent], resources: List[Resource], step_num: int, params: Dict[str, Any]) -> Tuple[List[Agent], List[Resource]]:
     """Applies agent actions, including requesting, consuming, and paying for resources."""
@@ -30,7 +30,7 @@ def _apply_economic_policies(agents: List[Agent], resources: List[Resource], par
     redistribute_wealth(agents, total_taxes, resources)
     return agents, total_taxes
 
-def _apply_agent_maintenance(agents: List[Agent], step_num: int, params: Dict[str, Any]) -> List[Agent]:
+def _apply_agent_maintenance(agents: List[Agent], resources: List[Resource], step_num: int, params: Dict[str, Any]) -> List[Agent]:
     """Applies agent maintenance, including adjusting needs, demand, income, and expenses."""
     adjust_agent_needs(agents)
     adjust_agent_demand_multiplier(agents, step_num)
@@ -61,7 +61,7 @@ def simulation_step(agents: List[Agent], resources: List[Resource], step_num: in
     agents, resources = _apply_agent_actions(agents, resources, step_num, params)
     resources = _apply_resource_dynamics(agents, resources, params)
     agents, total_taxes_redistributed = _apply_economic_policies(agents, resources, params)
-    agents = _apply_agent_maintenance(agents, step_num, params)
+    agents = _apply_agent_maintenance(agents, resources, step_num, params)
     agents = _handle_bankruptcies(agents)
 
     resource_prices = get_resource_prices(resources)
@@ -90,7 +90,7 @@ def run_simulation(params: Dict[str, Any]) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: A dictionary containing the results of the simulation.
     """
-    from config import PRICE_ELASTICITY, RESOURCE_REGEN_RATE, INITIAL_IMBALANCE, IMBALANCE_STRENGTH, SIMULATION_STEPS, NUM_AGENTS, AGENT_EXPENSE_RATE
+    from constants import PRICE_ELASTICITY, RESOURCE_REGEN_RATE, INITIAL_IMBALANCE, IMBALANCE_STRENGTH, SIMULATION_STEPS, NUM_AGENTS, AGENT_EXPENSE_RATE
     original_price_elasticity = PRICE_ELASTICITY
     original_resource_regen_rate = RESOURCE_REGEN_RATE
     original_initial_imbalance = INITIAL_IMBALANCE

@@ -1,7 +1,7 @@
 import numpy as np
 import random
-from constants import DEALLOCATION_RATE, TAX_RATE
-from models import Agent
+from .constants import DEALLOCATION_RATE, TAX_RATE
+from .models import Agent
 from typing import List, Tuple, Dict, Any
 
 def update_resource_prices(resources: List[Any]) -> None:
