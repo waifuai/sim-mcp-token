@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent-Based Economic Simulation</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent2: #7ee787;
+  --accent3: #d2a8ff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 3rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+header h1 { font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+header p { color: var(--text-muted); font-size: 1.1rem; }
+section { margin-bottom: 2.5rem; }
+h2 { font-size: 1.4rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 0.5rem; }
+.count { font-size: 0.85rem; color: var(--text-muted); font-weight: 400; }
+.section-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+.link-list { display: flex; flex-direction: column; gap: 0.25rem; }
+.link-list a { color: var(--accent); text-decoration: none; padding: 0.4rem 0.75rem; border-radius: 6px; transition: background 0.15s; font-size: 0.95rem; }
+.link-list a:hover { background: var(--card-bg); text-decoration: underline; }
+footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; padding-top: 2rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Agent-Based Economic Simulation</h1>
+<p></p>
+</header>
+<h1>Agent-Based Economic Simulation</h1>
+<p>A dynamic agent-based simulation modeling economic interactions between autonomous agents and limited resources. The system explores resource allocation strategies, price dynamics, and wealth distribution under various economic parameters.</p>
+<h2>Key Features</h2>
+<ul>
+<li>
+<p><strong>Autonomous Agents</strong>:<br />
+  50 agents with evolving resource needs, income/expense dynamics, and bankruptcy rules</p>
+</li>
+<li>
+<p><strong>Resource Ecosystem</strong>:<br />
+  3 resources with price elasticity, regeneration patterns, and capacity adaptation</p>
+</li>
+<li>
+<p><strong>Economic Mechanics</strong>:</p>
+</li>
+<li>Dynamic pricing based on supply/demand</li>
+<li>Tax system with wealth redistribution</li>
+<li>Bankruptcy detection and agent removal</li>
+<li>
+<p>Resource capacity adaptation to economic output</p>
+</li>
+<li>
+<p><strong>Analysis Tools</strong>:</p>
+</li>
+<li>Gini coefficient calculation</li>
+<li>Parameter experimentation framework</li>
+<li>Key metric tracking (bankruptcies, balances, prices)</li>
+</ul>
+<h2>Getting Started</h2>
+<h3>Requirements</h3>
+<ul>
+<li>Python 3.7+</li>
+<li>NumPy</li>
+</ul>
+<h3>Basic Usage</h3>
+<p>Run full experimentation suite:</p>
+<pre><code class="language-python">python main.py
+</code></pre>
+<h2>Code Structure</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>constants.py</code></td>
+<td>Central configuration of simulation parameters</td>
+</tr>
+<tr>
+<td><code>models.py</code></td>
+<td>Agent/Resource class definitions with core behaviors</td>
+</tr>
+<tr>
+<td><code>simulation.py</code></td>
+<td>Main simulation loop and step-by-step execution logic</td>
+</tr>
+<tr>
+<td><code>helpers.py</code></td>
+<td>Economic calculations and system operations</td>
+</tr>
+<tr>
+<td><code>experimentation.py</code></td>
+<td>Parameter space exploration and result analysis</td>
+</tr>
+<tr>
+<td><code>main.py</code></td>
+<td>Entry point for running experiments and viewing results</td>
+</tr>
+</tbody>
+</table>
+<h2>Core Parameters (constants.py)</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NUM_AGENTS</code></td>
+<td>Initial population size</td>
+<td>50</td>
+</tr>
+<tr>
+<td><code>SIMULATION_STEPS</code></td>
+<td>Duration of each simulation run</td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>TAX_RATE</code></td>
+<td>Wealth redistribution percentage</td>
+<td>2%</td>
+</tr>
+<tr>
+<td><code>PRICE_ELASTICITY</code></td>
+<td>Demand sensitivity to price changes</td>
+<td>0.05</td>
+</tr>
+<tr>
+<td><code>RESOURCE_REGEN_RATE</code></td>
+<td>Base resource regeneration rate</td>
+<td>1%</td>
+</tr>
+<tr>
+<td><code>BANKRUPTCY_THRESHOLD</code></td>
+<td>Balance level for agent removal</td>
+<td>-50</td>
+</tr>
+<tr>
+<td><code>AGENT_INCOME_CEILING</code></td>
+<td>Maximum possible agent income</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Experimentation Insights</h2>
+<p>The system tests four key parameters across ranges:</p>
+<ol>
+<li>Price Elasticity (0.01-0.1)</li>
+<li>Resource Regeneration (0.005-0.02)</li>
+<li>Tax Rates (0-5%)</li>
+<li>Expense Rates (10-50%)</li>
+</ol>
+<p>Sample findings:</p>
+<pre><code>Tax rate that minimizes bankruptcies: 0.0278
+Regen rate that maximizes average final balance: 0.0189
+</code></pre>
+<h2>Key Metrics Tracked</h2>
+<ul>
+<li>Average agent balance</li>
+<li>Wealth inequality (Gini coefficient)</li>
+<li>Bankruptcy count</li>
+<li>Resource price stability</li>
+<li>System-wide economic output</li>
+</ul>
+<h2>Simulation Flow</h2>
+<ol>
+<li>Price updates based on resource utilization</li>
+<li>Resource allocation through agent bidding</li>
+<li>Income distribution and expense deduction</li>
+<li>Tax collection/redistribution</li>
+<li>Bankruptcy checks and agent removal</li>
+<li>Resource regeneration and capacity adjustment</li>
+<li>Agent behavior adaptation</li>
+</ol>
+<h2>Analysis Capabilities</h2>
+<ul>
+<li>Parameter sensitivity testing</li>
+<li>Optimal policy identification</li>
+<li>System stability evaluation</li>
+<li>Emergent pattern detection</li>
+<li>Equilibrium state analysis</li>
+</ul>
+
+<section>
+  <h2>Source Code</h2>
+  <p class="section-desc">Browse the source repository</p>
+  <div class="link-list">
+    <a href="https://github.com/waifuai/sim-mcp-token">GitHub Repository</a>
+  </div>
+</section>
+</div>
+</body>
+</html>
