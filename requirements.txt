@@ -1,0 +1,6 @@
+# Runtime (requires Python >= 3.11, via manim)
+manim==0.21.0
+numpy==2.4.6
+
+# Test (stdlib unittest; pytest.ini is present)
+pytest==9.1.1
